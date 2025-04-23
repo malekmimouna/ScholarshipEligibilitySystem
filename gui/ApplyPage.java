@@ -2,7 +2,6 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import model.Student;
 import java.awt.event.ActionEvent;
 
 public class ApplyPage extends JFrame {
@@ -39,8 +38,7 @@ public class ApplyPage extends JFrame {
             double income = Double.parseDouble(incomeField.getText());
             int age = Integer.parseInt(ageField.getText());
 
-            Student student = new Student(name, gpa, income, age);
-            JOptionPane.showMessageDialog(this, "Application submitted successfully for: " + name);
+            JOptionPane.showMessageDialog(this, "Application submitted successfully for: " + name + " with GPA: " + gpa + " and Family Income: " + income);
             // Save to DB or send to server logic here
         });
     }

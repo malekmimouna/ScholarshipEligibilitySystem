@@ -2,13 +2,11 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class LoginPage extends JFrame {
     public LoginPage() {
         setTitle("Login Page");
-        setSize(300, 200);
+        setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 

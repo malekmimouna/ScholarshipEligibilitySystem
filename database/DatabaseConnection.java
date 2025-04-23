@@ -8,15 +8,15 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    // Database credentials (replace with your database details)
-    private static final String URL = "jdbc:mariadb://localhost:3306/scholarship_db"; // Adjust to your database name
-    private static final String USER = "root"; // Your MariaDB username
-    private static final String PASSWORD = "password"; // Your MariaDB password
+    
+    private static final String URL = "jdbc:mariadb://localhost:3306/scholarship_db"; 
+    private static final String USER = "root"; 
+    private static final String PASSWORD = "Maether"; 
 
-    // JDBC Connection
+    
     private Connection connection;
 
-    // Constructor to initialize the database connection
+    
     public DatabaseConnection() {
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -26,7 +26,7 @@ public class DatabaseConnection {
         }
     }
 
-    // Method to fetch all students
+    
     public ResultSet getStudents() {
         String query = "SELECT * FROM students";
         try {
@@ -38,7 +38,6 @@ public class DatabaseConnection {
         return null;
     }
 
-    // Method to fetch all scholarships
     public ResultSet getScholarships() {
         String query = "SELECT * FROM scholarships";
         try {
@@ -50,7 +49,7 @@ public class DatabaseConnection {
         return null;
     }
 
-    // Method to insert a student
+    
     public void insertStudent(String name, int age, String sex, String address) {
         String query = "INSERT INTO students (name, age, sex, address) VALUES (?, ?, ?, ?)";
         try {
@@ -66,7 +65,7 @@ public class DatabaseConnection {
         }
     }
 
-    // Method to insert a scholarship
+   
     public void insertScholarship(String name, String description, int maxAmount, int totalAmount) {
         String query = "INSERT INTO scholarships (name, description, maxAmount, totalAmount) VALUES (?, ?, ?, ?)";
         try {
@@ -82,7 +81,7 @@ public class DatabaseConnection {
         }
     }
 
-    // Method to close the connection
+    
     public void closeConnection() {
         try {
             if (connection != null) {

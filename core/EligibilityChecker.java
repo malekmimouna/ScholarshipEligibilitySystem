@@ -10,8 +10,8 @@ public class EligibilityChecker {
             throw new IllegalArgumentException("Student or Scholarship cannot be null");
         }
 
-        // Example conditions (customize these as needed)
-        boolean meetsGPA = student.getGpa() >= scholarship.getMinGpa();
+        
+        boolean meetsGPA = student.getGpa() >= scholarship.getMinAge();
         boolean meetsIncome = student.getFamilyIncome() <= scholarship.getMaxIncome();
         boolean meetsAge = student.getAge() <= scholarship.getMaxAge();
 
@@ -21,7 +21,7 @@ public class EligibilityChecker {
     public static String getEligibilityReason(Student student, Scholarship scholarship) {
         StringBuilder reason = new StringBuilder();
 
-        if (student.getGpa() < scholarship.getMinGpa()) {
+        if (student.getGpa() < scholarship.getMinGPA()) {
             reason.append("GPA too low. ");
         }
         if (student.getFamilyIncome() > scholarship.getMaxIncome()) {
@@ -33,4 +33,5 @@ public class EligibilityChecker {
 
         return reason.length() > 0 ? reason.toString() : "Eligible";
     }
+    //checks if a student qualifies for a scholarship based on GPA, age, and family income
 }
